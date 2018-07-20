@@ -1,0 +1,12 @@
+﻿@model Shared.Models.StatisticsModel
+<div class="small">
+    <div class="row statTitle">@ViewBag.Caption</div>
+    <div class="row">
+        <div class="col-md-8">Average:</div>
+        <div class="col-md-4">@Model.AverageConferenceAttendees</div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">Total:</div>
+        <div class="col-md-4">@Model.NumberOfAttendees</div>
+    </div>
+</div>

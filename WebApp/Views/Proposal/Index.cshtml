@@ -1,0 +1,17 @@
+﻿@using Shared.Models
+@model IEnumerable<ProposalModel>
+<div class="row">
+    <div class="col-md-10 col-md-offset-2">
+        <table class="table">
+            <tr>
+                <th>Title</th>
+                <th>Speaker</th>
+                <th>Approved</th>
+                <th>Actions</th>
+            </tr>
+            @Html.DisplayForModel()
+        </table>
+        <a asp-action="Add" asp-route-conferenceId="@ViewBag.ConferenceId">Add</a>
+
+    </div>
+</div>

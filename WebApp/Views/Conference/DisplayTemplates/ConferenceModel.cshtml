@@ -1,0 +1,21 @@
+﻿@using Microsoft.Extensions.Options
+@using WebApp
+@model Shared.Models.ConferenceModel     
+@inject IOptions<GlobomanticsOptions> options
+<tr>
+    <td>@Model.Name</td>
+    <td>@Model.Location</td>
+    <td>@Model.Start.ToString("ddd d MMM")</td>
+    @if (Model.AttendeeTotal > options.Value.BoldConferenceAttendeeThreshold)
+    { 
+        
+        <td><strong>@Model.AttendeeTotal</strong></td>
+    }
+    else
+    {
+        <td>@Model.AttendeeTotal</td>
+    }
+    <td>
+        <a asp-controller="Proposal" asp-action="Index" asp-route-conferenceId="@Model.Id">Proposals</a>
+    </td>
+</tr>
